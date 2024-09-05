@@ -3,6 +3,7 @@ const apiRouter = express.Router();
 const jwt = require('jsonwebtoken');
 const { getUserByUsername } = require('../database');
 const { JWT_SECRET } = process.env;
+console.log(JWT_SECRET)
 
 const volleyball = require('volleyball')
 apiRouter.use(volleyball)
