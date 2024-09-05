@@ -52,7 +52,7 @@ const bossesRouter = require('./bosses');
 apiRouter.use('/bosses', bossesRouter);
 
 apiRouter.use((err, req, res, next) => {
-  res.status(500).send(err)
+  res.status(500).send("hello")
 })
 
 module.exports = apiRouter;

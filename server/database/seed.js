@@ -45,6 +45,7 @@ const dropTables = async () => {
       DROP TABLE IF EXISTS users;
       DROP TABLE IF EXISTS bosses;
       DROP TABLE IF EXISTS games;
+      DROP TYPE IF EXISTS permission;
       `)
   } catch (err) {
     throw err;
@@ -55,10 +56,11 @@ const createTables = async () => {
   try {
     console.log("Creating Tables...")
     await db.query(`
+      CREATE TYPE permission AS ENUM ('guest', 'admin');
 
       CREATE TABLE users (
         user_id SERIAL PRIMARY KEY,
-        permissions text,
+        permissions permission,
         username varchar(255),
         password varchar(255)
       );
