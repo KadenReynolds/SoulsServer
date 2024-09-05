@@ -22,7 +22,7 @@ bossesRouter.get('/', async (req, res, next) => {
   }
 });
 
-bossesRouter.post('/', async (req, res, next) => {
+bossesRouter.post('/', requireAdmin, async (req, res, next) => {
   const {name,
     description,
     boss_image,
@@ -70,7 +70,7 @@ bossesRouter.post('/', async (req, res, next) => {
   }
 })
 
-bossesRouter.delete('/:bossID', async (req, res, next) => {
+bossesRouter.delete('/:bossID', requireAdmin, async (req, res, next) => {
 
   try {
     const boss = await deleteBossByID(req.params.bossID)
