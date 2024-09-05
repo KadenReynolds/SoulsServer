@@ -1,5 +1,5 @@
 const {Client} = require ('pg');
-const connectionString = process.env.DATABASE_URL || 'http://localhost:5432/SoulsSimilarRankings';
+const connectionString = process.env.DATABASE_URL || 'postgresql://postgres:DlQWMgBBeyGmtDgpapOONZWVgNBXLiCn@junction.proxy.rlwy.net:30895/railway';
 
 const db = new Client({
   connectionString,

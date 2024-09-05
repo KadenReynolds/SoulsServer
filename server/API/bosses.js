@@ -22,7 +22,7 @@ bossesRouter.get('/', async (req, res, next) => {
   }
 });
 
-bossesRouter.post('/', requireAdmin, async (req, res, next) => {
+bossesRouter.post('/', async (req, res, next) => {
   const {name,
     description,
     boss_image,
