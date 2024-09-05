@@ -21,7 +21,7 @@ usersRouter.get('/', async (req, res, next) => {
   }
 });
 
-usersRouter.post('/login', async (req, res, next) => {
+usersRouter.post('/', async (req, res, next) => {
   const { username, password } = req.body;
   if (!username || !password) {
       next({

@@ -10,7 +10,7 @@ const users = [{
   user_id: 1,
   permissions: 'admin',
   username: 'KayReynolds',
-  password: passList(1)
+  password: "1234"
 }]
 
 const games = [{
