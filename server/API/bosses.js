@@ -70,7 +70,7 @@ bossesRouter.post('/', async (req, res, next) => {
   }
 })
 
-bossesRouter.delete('/:bossID',requireAdmin, async (req, res, next) => {
+bossesRouter.delete('/:bossID', async (req, res, next) => {
 
   try {
     const boss = await deleteBossByID(req.params.bossID)
