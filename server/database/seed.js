@@ -10,7 +10,7 @@ const users = [{
   user_id: 1,
   permissions: 'admin',
   username: 'KayReynolds',
-  password: "1234"
+  password: process.env.ADMIN_PASS
 }]
 
 const games = [{
