@@ -6,12 +6,20 @@ const { createBoss } = require('./bosses')
 const { passList } = require('./adminPass')
 
 
-const users = [{
-  user_id: 1,
-  permissions: 'admin',
-  username: process.env.ADMIN_USER,
-  password: process.env.ADMIN_PASS
-}]
+const users = [
+  {
+    user_id: 1,
+    permissions: 'admin',
+    username: process.env.ADMIN_USER,
+    password: process.env.ADMIN_PASS
+  },
+  {
+    user_id: 2,
+    permissions: 'admin',
+    username: process.env.ADMIN_USER2,
+    password: process.env.ADMIN_PASS2
+  }
+]
 
 const games = [{
   game_id: 1,
