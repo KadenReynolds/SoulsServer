@@ -9,7 +9,7 @@ const { passList } = require('./adminPass')
 const users = [{
   user_id: 1,
   permissions: 'admin',
-  username: 'KayReynolds',
+  username: process.env.ADMIN_USER,
   password: process.env.ADMIN_PASS
 }]
 
