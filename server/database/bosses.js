@@ -51,6 +51,18 @@ const getAllBosses = async() => {
   }
 }
 
+const getBossByBossID = async(bossID) => {
+  try {
+    const {rows : boss} = await db.query(`
+      SELECT * FROM bosses
+      WHERE boss_id=$1
+    `,[bossID]) 
+    return boss
+  } catch (err) {
+    throw err
+  }
+}
+
 const getBossesByGameID = async(gameID) => {
   try {
     const {rows : boss} = await db.query(`
@@ -89,10 +101,43 @@ const deleteBossByID = async(bossID) => {
   }
 }
 
+async function updateBoss({bossID, ...fields}){
+  try {
+    const ladela = await (fields.lore + fields.difficulty + fields.entertainment + fields.level + fields.appearence) - fields.annoyance
+    let boss;
+      const {rows} = await db.query(`
+        UPDATE bosses
+        SET  
+          name= $1, 
+          description = $2, 
+          boss_image = $3, 
+          game_id = $4, 
+          game_rank = $5, 
+          overall_rank = $6,
+          lore = $7,
+          annoyance = $8,
+          difficulty = $9,
+          entertainment = $10,
+          level = $11,
+          appearence = $12,
+          ladela = $13
+        WHERE boss_id = $14
+        RETURNING *;
+      `, [fields.name, fields.description, fields.boss_image, fields.game_id, fields.game_rank, fields.overall_rank, fields.lore, fields.annoyance, fields.difficulty, fields.entertainment, fields.level, fields.appearence, ladela, bossID]);
+      boss = rows[0];
+      return boss;
+
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   createBoss,
   getAllBosses,
   getBossesByGameID,
   deleteBossByID,
-  getBossesByGameIDInOrderOfLadela
+  getBossesByGameIDInOrderOfLadela,
+  updateBoss,
+  getBossByBossID
 }
