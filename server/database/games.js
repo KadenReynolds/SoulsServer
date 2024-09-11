@@ -57,9 +57,31 @@ const deleteGameByID = async(gameID) => {
   }
 }
 
+async function updateGames({gameID, ...fields}){
+  try {
+    let game;
+      const {rows} = await db.query(`
+        UPDATE games
+        SET  
+          name= $1, 
+          description = $2, 
+          build_played = $3, 
+          game_image = $4
+        WHERE game_id = $5
+        RETURNING *;
+      `, [fields.name, fields.description, fields.build_played, fields.game_image, gameID]);
+      game = rows[0];
+      return game;
+
+  } catch (error) {
+    throw error
+  }
+}
+
 module.exports = {
   createGame,
   getAllGames,
   getGameByID,
-  deleteGameByID
+  deleteGameByID,
+  updateGames
 }

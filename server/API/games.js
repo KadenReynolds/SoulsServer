@@ -5,7 +5,8 @@ const {
   createGame,
   getAllGames,
   getGameByID,
-  deleteGameByID
+  deleteGameByID,
+  updateGames
 } = require('../database')
 
 const {requireAdmin} = require('./utils')
@@ -63,6 +64,27 @@ gamesRouter.get('/:gameID', async (req, res, next) => {
   } catch ({name, message}) {
     next({name, message})
   }
+})
+
+gamesRouter.put('/:gameID', async (req, res, next) => {
+
+  try { 
+  const { name, description, build_played, game_image } = req.body
+
+ const game = await updateGames({gameID:req.params.gameID,
+    name,
+    description,
+    build_played,
+    game_image,
+  })
+
+
+ res.send(game)
+    
+  } catch ({name, message}) {
+    next({name, message})
+  }
+
 })
 
 module.exports = gamesRouter
