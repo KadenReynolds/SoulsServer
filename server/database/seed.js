@@ -23,7 +23,7 @@ const users = [
 
 const games = [{
   game_id: 1,
-  name: "BloodBorne",
+  title: "BloodBorne",
   description: "very fun game",
   build_played: "strength",
   game_image: "https://images2.alphacoders.com/916/thumbbig-916448.webp"
@@ -167,7 +167,7 @@ const createTables = async () => {
 
       CREATE TABLE games (
         game_id SERIAL PRIMARY KEY,
-        name varchar(64),
+        title varchar(64),
         description text,
         build_played varchar(64),
         game_image text
@@ -221,7 +221,7 @@ const insertGames = async () => {
     for (const game of games) {
       await createGame({
         game_id: game.game_id,
-        name: game.name,
+        title: game.title,
         description: game.description,
         build_played: game.build_played,
         game_image: game.game_image

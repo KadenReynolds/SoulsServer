@@ -24,16 +24,16 @@ gamesRouter.get('/', async (req, res, next) => {
 });
 
 gamesRouter.post('/', requireAdmin, async (req, res, next) => {
-  const {name, description, build_played, game_image} = req.body
+  const {title, description, build_played, game_image} = req.body
   const gameData = {}
   try {
-    gameData.name = name
+    gameData.title = title
     gameData.description = description
     gameData.build_played = build_played
     gameData.game_image = game_image
 
     const newGame = await createGame({
-      name: gameData.name,
+      title: gameData.title,
       description: gameData.description,
       build_played: gameData.build_played,
       game_image: gameData.game_image
@@ -69,10 +69,10 @@ gamesRouter.get('/:gameID', async (req, res, next) => {
 gamesRouter.put('/:gameID', async (req, res, next) => {
 
   try { 
-  const { name, description, build_played, game_image } = req.body
+  const { title, description, build_played, game_image } = req.body
 
  const game = await updateGames({gameID:req.params.gameID,
-    name,
+    title,
     description,
     build_played,
     game_image,

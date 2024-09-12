@@ -8,7 +8,8 @@ const {
   deleteBossByID,
   getBossesByGameIDInOrderOfLadela,
   updateBoss,
-  getBossByBossID
+  getBossByBossID,
+  getBossesAndGameNameByGameID
 } = require('../database')
 
 const {requireAdmin} = require('./utils')
@@ -112,6 +113,17 @@ bossesRouter.get('/:gameID/ladela', async (req, res, next) => {
     res.send({
       bosses
     })
+  } catch ({name, message}) {
+    next({name, message})
+  }
+})
+
+bossesRouter.get('/:gameID/gamebosses/ladela', async (req, res, next) => {
+  try {
+    const bosses = await getBossesAndGameNameByGameID(req.params.gameID)
+    res.send(
+      bosses
+    )
   } catch ({name, message}) {
     next({name, message})
   }

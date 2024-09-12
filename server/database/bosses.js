@@ -75,6 +75,27 @@ const getBossesByGameID = async(gameID) => {
   }
 }
 
+const getBossesAndGameNameByGameID = async(gameID) => {
+  try {
+    const {rows:[bossDesc]} = await db.query(`
+      SELECT bosses.*, games.title
+      FROM bosses, games
+      WHERE bosses.game_id = $1 AND games.game_id = $1
+      ORDER BY ladela DESC LIMIT 1;
+    `,[gameID])
+    const {rows:[bossAsc]} = await db.query(`
+      SELECT bosses.*, games.title
+      FROM bosses, games
+      WHERE bosses.game_id = $1 AND games.game_id = $1
+      ORDER BY ladela ASC LIMIT 1;
+    `,[gameID])
+    let boss = [bossAsc, bossDesc]  
+    return boss
+  } catch (err) {
+    throw err
+  }
+}
+
 const getBossesByGameIDInOrderOfLadela = async(gameID) => {
   try {
     const {rows : boss} = await db.query(`
@@ -139,5 +160,6 @@ module.exports = {
   deleteBossByID,
   getBossesByGameIDInOrderOfLadela,
   updateBoss,
-  getBossByBossID
+  getBossByBossID,
+  getBossesAndGameNameByGameID
 }
