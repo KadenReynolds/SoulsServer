@@ -1,19 +1,21 @@
 const db = require('./client')
 
-const createGame = async ({title, description, build_played, game_image}) => {
+const createGame = async ({title, description, build_played, game_image, patch}) => {
   try {
     const {rows:[game]} = await db.query(`
       INSERT INTO games(
         title,
         description,
         build_played,
-        game_image )
-      VALUES($1, $2, $3, $4)
+        game_image,
+        patch )
+      VALUES($1, $2, $3, $4, $5)
       RETURNING *`, [
         title,
         description,
         build_played,
-        game_image
+        game_image,
+        patch
       ]);
     return game;
   } catch (err) {
@@ -66,10 +68,11 @@ async function updateGames({gameID, ...fields}){
           title = $1, 
           description = $2, 
           build_played = $3, 
-          game_image = $4
-        WHERE game_id = $5
+          game_image = $4,
+          patch = $5
+        WHERE game_id = $6
         RETURNING *;
-      `, [fields.title, fields.description, fields.build_played, fields.game_image, gameID]);
+      `, [fields.title, fields.description, fields.build_played, fields.game_image, fields.patch, gameID]);
       game = rows[0];
       return game;
 
