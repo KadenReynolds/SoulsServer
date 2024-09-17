@@ -21,14 +21,24 @@ const users = [
   }
 ]
 
-const games = [{
-  game_id: 1,
-  title: "BloodBorne",
-  description: "very fun game",
-  build_played: "strength",
-  game_image: "https://images2.alphacoders.com/916/thumbbig-916448.webp",
-  patch: "V1.09"
-}]
+const games = [
+  {
+    game_id: 1,
+    title: "BloodBorne",
+    description: "very fun game",
+    build_played: "strength",
+    game_image: "https://images2.alphacoders.com/916/thumbbig-916448.webp",
+    patch: "V1.09"
+  },
+  {
+    game_id: 2,
+    title: "Dark Souls Remastered",
+    description: "wassup",
+    build_played: "dex",
+    game_image: "https://wallpaperaccess.com/full/3900272.jpg",
+    patch: "V1.03"
+  }
+]
 
 const bosses = [
   {
