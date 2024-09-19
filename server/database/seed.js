@@ -25,8 +25,8 @@ const games = [
   {
     game_id: 1,
     title: "BloodBorne",
-    description: "very fun game",
-    build_played: "strength",
+    description: "Bloodborne is an action RPG set in the gothic, nightmarish city of Yharnam, plagued by a mysterious blood-borne disease. Players assume the role of the Hunter, a customizable character tasked with uncovering the city’s dark secrets while battling grotesque creatures and formidable foes. The game features fast-paced combat, a hauntingly atmospheric world, and deep lore inspired by cosmic horror. With its challenging gameplay and intricate level design, Bloodborne immerses players in a relentless, eerie journey of survival and discovery.",
+    build_played: "Skill w/ Blades of Mercy, Strength/Arcane w/ HMG",
     game_image: "https://images2.alphacoders.com/916/thumbbig-916448.webp",
     patch: "V1.09"
   },
@@ -76,7 +76,7 @@ const bosses = [
 {
     boss_id: 5,
     name: "Blood-Starved Beast",
-    description: "",
+    description: "extremely weak to fire and serrated weapons but even with this weakness an unprepared hunter would be overwhelmed by its hard-hitting attacks, but this can easily be avoided by the use blood cocktails.",
     boss_image: "https://wallpaperaccess.com/full/4439540.jpg",
     game_id: 1,
     game_rank: 0,
@@ -108,7 +108,7 @@ const bosses = [
 {
     boss_id: 10,
     name: "Martyr Logarius",
-    description: "",
+    description: "You just get done wandering through one of the best areas Bloodbornes main game has to offer, you walk up these snow-filled steps, and see a body laying in a chair on a slanted roof. Inching closer the corpse begins to move shaking off what seems to be a decades amount of ice, his bones crack back into place as he stands up and starts walking towards you, what is at first a limp becomes a full fledge walk by the end, with the sound of bells ringing in your ears while the cold wind blows, this is Martyr Logarius. The leader of the Executioners tasked with killing all of the Vilebloods of Cainhurst Castle. The martyrs first phase is all about magic, he can summon a slashing wave of skeleton heads that you must dodge through, an AOE that can either be immediate or delayed by his second swing, and even a spinning saw of bloody heads with low tracking. Getting him to second phase sees Logarius use his scythe and off-hand sword a lot more, allowing for parry and backstab opportunities, he can shove his sword into the ground creating an seemingly endless barrage of swords flying at your character. This sword summons length, mixed with the slanted roof messing with AI is the only two annoyances about this fight. Once defeated Logarius will drop his Crown of Illusions, dawning it and walking to his chair will reveal what he was hiding, a tower housing the last of the Vilebloods, the immortal Queen Annalise. It's not known whether Logarius was trying to keep her hidden to trap her, allowing for time to present a way to end her life, or if he was protecting the thing he swore so solemnly to destroy. It is all left up to speculation although as we find through Alfred's questline it wouldn't have done much good to kill her as she can be resurrected from the Altar of Despair.",
     boss_image: "https://miro.medium.com/v2/resize:fit:1140/1*Y2gtgqgdRG97dYyE6C3IAw@2x.jpeg",
     game_id: 1,
     game_rank: 0,
@@ -124,8 +124,8 @@ const bosses = [
 {
     boss_id: 6,
     name: "Rom, the Vacuous Spider",
-    description: "Magic Potato",
-    boss_image: "data:image/jpeg;base64,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",
+    description: "summons many spiders that try to surround you so that rom can shoot her magic at you",
+    boss_image: "https://www.bogleech.com/souls/bb-rombabies.png",
     game_id: 1,
     game_rank: 0,
     overall_rank: 0,
@@ -156,7 +156,7 @@ const bosses = [
 {
     boss_id: 8,
     name: "Lady Maria of the Astral Clocktower",
-    description: "",
+    description: "filler description. fast fire and blood attacks easy to parry",
     boss_image: "https://wallpaperaccess.com/full/7083819.jpg",
     game_id: 1,
     game_rank: 0,
@@ -172,7 +172,7 @@ const bosses = [
 {
     boss_id: 12,
     name: "Laurence, the First Vicar",
-    description: "",
+    description: "Laurence, the First Vicar, yes that Laurence, is one of the final bosses in Bloodbornes DLC. He is one of, if not the most important character in the story of Bloodborne. He started the healing church and used blood ministration research to fuel his take of the best way to achieve human ascension into Great Ones (and 'may' have poisoned the citizens of Old Yharnam in the process). He is even seen in cutscenes (namely the one where he betrays Willem after beating Vicar Amelia) and spoken about in multiple item descriptions and dialogue. He is so important to the story, making it all the more disappointing that his boss fight is so terrible. He looks exactly like the Cleric Beast (which is lore accurate) with a molten lava core, a curse laid upon him curtesy of Kos. His move set in the first phase is also the exact same, albeit fire AOE's following most moves and a few unique attacks, which is fine but why does every attack seem to one shot a character with an almost egregious levels of HP, and the best fire resistant gear in the game. He is the definition of difficulty done wrong. In second phase he does become unique by falling and breaking his legs off, spewing lava from his molten core while crawling on the ground. This is cool, but then the rest of the fight becomes a battle of sticking to his sides, too far behind him results in getting staggered by his lava pour, and being in front of him results in long swipes, moving combos, and a lava spew that will most likely make you overcorrect your dodge, and either get hit or end up behind him in his lava. The best way to describe Laurence is... great character, terrible boss.",
     boss_image: "https://cogconnected.com/wp-content/uploads/2016/01/laurence-1.jpg",
     game_id: 1,
     game_rank: 0,
@@ -188,7 +188,7 @@ const bosses = [
 {
     boss_id: 18,
     name: "Amygdala",
-    description: "",
+    description: "Entering the Nightmare Frontier allows you to finally fight one of the tower hanging Amygdala's you've most likely seen getting to this point. This one jumps from a tower (typical) slamming down near you and uses long range swipes and slam attacks that can easily be dodged allowing for punishment on either its head or arms. Eventually, he will gain AOE's at the end of his arms during attacks requiring more precise timing to punish him. In third phase he will gain even more range by ripping off two of his arms, and while this would make fighting him head on a lot more challenging, you can stand in front of his groin triggering his jump attack, which can be easily dodged allowing for punishment on his head with minimal worries. This boss fight is most likely very easy at this point in the game, however; just as a note, the version in the Defiled Chalice is the sole reason I never want to go through the dungeons again.",
     boss_image: "https://i.pinimg.com/736x/fb/a6/24/fba624965ffb33113a24f809d82bdad7.jpg",
     game_id: 1,
     game_rank: 0,
@@ -204,7 +204,7 @@ const bosses = [
 {
     boss_id: 11,
     name: "Ebrietas, Daughter of the Cosmos",
-    description: "",
+    description: "filler description. physical slam and long-range magic.",
     boss_image: "https://wallpaperaccess.com/full/6343791.jpg",
     game_id: 1,
     game_rank: 0,
@@ -220,7 +220,7 @@ const bosses = [
 {
     boss_id: 14,
     name: "Mergo's Wet Nurse",
-    description: "",
+    description: "Mergo's Wet Nurse is presumably a Great One tasked with mothering Mergo, it swoops down as you approach the invisible child covering it with it's wings. If you didn't know until now Bloodbornes main task given to the player by Gehrman/Moon Presence is to kill a Great Ones child. The Wet Nurse has multiple arms used for attacks that vary from outward slashes, to jump attacks, to multi hit combos, the fight feels almost like a horrific dance of some kind. Eventually it will release an AOE that if connects, will start a mini phase of clone summoning attacks from Mergo's Wet Nurse. This attack can actually be dodged with precise timing, rendering the phase useless. The main complaints of this fight, is how anti-climatic it can be, being very easy for it's place in the game, however; it can still pose a challenge if your timing isn't correct, Also, this technically can be the final boss of the game and it just doesn't feel like a rewarding boss in that regard, making the game bittersweet if you choose this ending. ",
     boss_image: "https://wallpaperaccess.com/full/6343963.jpg",
     game_id: 1,
     game_rank: 0,
@@ -236,7 +236,7 @@ const bosses = [
 {
     boss_id: 15,
     name: "Micolash, Host of the Nightmare",
-    description: "",
+    description: "After running through most of the Nightmare of Mensis, you will come across Micolash, spewing something to Kos and saying how 'no one can stop' what he calls a 'dream'. Micolash is an interesting enough character using the hosting abilities of the nightmare, granting him audience with the Great Ones, which he believes will lead to human ascension. His boss fight is not as interesting, first phase he will run around a mini-level requiring you to chase him to move him to the next point, eventually, and I mean eventually; he will run into the first boss area where he is joined by two marionettes, he will spam the Augur of Ebrietas move, which can easily be dodged resulting in major punishment if your stamina/positioning allows for it. After reaching half health he will disappear and start saying how, a hunter is a hunter, even in a dream. Which leads to an even longer chase scene, that will finally result in a one-on-one fight. It is best to stick close to Micolash as at medium or long range he will spam A Call Beyond, which can decimate your health. Altogether Micolash is one of the worst and most annoying bosses in Bloodborne.",
     boss_image: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/06/bloodborne-micolash-1.jpg",
     game_id: 1,
     game_rank: 0,
@@ -252,7 +252,7 @@ const bosses = [
 {
     boss_id: 17,
     name: "Ludwig, the Accursed",
-    description: "",
+    description: "Ludwig is a boss that needs no introduction. He is so notable that even people that have never played Bloodborne still know of his existence; and it is not hard to see why, with him wielding the poster sword of the franchise, his beautiful transformation, and with the intensity his music leaving you questioning if you could truly overcome such a colossal foe. Making for a boss that even when you are fully prepared you can still be easily defeated by not being careful. Even when you think you have got the hang of him he ends his fight with him regaining what is left of his humanity transforming with new attacks and abilities that are in stark contrast to his previous faze. Just so he could achieve an honorable death not as a beast but as a hunter.",
     boss_image: "https://wallpaperaccess.com/full/3112382.jpg",
     game_id: 1,
     game_rank: 0,
@@ -268,7 +268,7 @@ const bosses = [
 {
     boss_id: 13,
     name: "Orphan of Kos",
-    description: "",
+    description: "Orphan is the (intended) final boss of the Old Hunters DLC, and he certainly feels as such. You walk onto this desolate beach with nothing but ocean and a cadaver in front of you, the corpse of Kos. All of a sudden, this horrifying creature starts clawing its way out of its mothers decaying carcass, covered in guts and clutching his own placenta with a death grip. He stands up, stares off at the moon with Yarhnam in it's reflection and starts weeping as the screen fades to black. Orphan is probably the most aggressive boss in Bloodborne, not giving you a second to breathe for a lot of the fight, this is combatted by the fact if you can dodge through his hits you have plenty of time to heal, punish, or even go for a backstab opportunity, he is screaming in agony as the fight continues. Eventually he will enter second phase gaining a lighting summon, and holding his placenta weapon more as a axe then a sweeping flail. This fight represents Bloodborne perfectly, undertones of agony and pain swallowed up through pure aggressiveness. Orphan is one of the few bosses I am almost glad to die to, to be able to witness his glory all over again before ending my playthrough.",
     boss_image: "https://steamuserimages-a.akamaihd.net/ugc/921419279565084383/B80714609469DA571ED6F573E912DF88BC8A2362/?imw=1024&imh=576&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
     game_id: 1,
     game_rank: 0,
@@ -284,7 +284,7 @@ const bosses = [
 {
     boss_id: 16,
     name: "Darkbeast Paarl",
-    description: "",
+    description: "filler description. electric dog that's limbs that you can use to chain breaks to keep him down.",
     boss_image: "https://wallpaperaccess.com/full/3112400.jpg",
     game_id: 1,
     game_rank: 0,
@@ -300,7 +300,7 @@ const bosses = [
 {
     boss_id: 19,
     name: "Living Failures",
-    description: "",
+    description: "filler description. many failed experiments that hit you for physical slam and long-range magic in which they summon magic meteors from the stars.",
     boss_image: "https://th.bing.com/th/id/OIP.d8th7RPgeKP-KdcQYGTkNgHaEK?w=328&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7",
     game_id: 1,
     game_rank: 0,
@@ -332,7 +332,7 @@ const bosses = [
 {
     boss_id: 20,
     name: "Celestial Emissary",
-    description: "",
+    description: "You have probably seen one of these blue alien-like creatures in your travels before this fight. Just in case you haven't there is, a well placed, one in front of the boss arena allowing you to learn their moves, that is, if you even need to. You will hack away at the Celestials until you notice one hides in the back and doesn't have a health bar when locking on, this is the boss. Getting this Celestial to half health with have it phase transition by getting much bigger, and sprouting tentacles from its head, it can then perform magic attacks as well as long sweeps with it's arms, altogether this boss fight is very mediocre and nothing compared to what follows right after it.",
     boss_image: "https://www.beesmygod.com/wp-content/uploads/2023/09/Bloodborne_E2_84_A2_20150513222725.png",
     game_id: 1,
     game_rank: 0,
@@ -348,7 +348,7 @@ const bosses = [
   {
     boss_id: 21,
     name: "The One Reborn",
-    description: "",
+    description: "filler description. he has minions that cast spells at you during the fight but they can by easily delt with if killed first. he has a lot of limbs that you can use to chain breaks to keep him down. he also has a lot of magic attacks that deal massive damage and are hard to avoid. he is also mega resistant to magic/arcane damage.",
     boss_image: "https://wallpaperaccess.com/full/6343755.jpg",
     game_id: 1,
     game_rank: 0,

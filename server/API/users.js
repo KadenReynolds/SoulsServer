@@ -37,9 +37,7 @@ usersRouter.post('/', async (req, res, next) => {
                   const token = jwt.sign({
                       id: user.user_id,
                       username
-                  }, process.env.JWT_SECRET, {
-                      expiresIn: '1w'
-                  });
+                  }, process.env.JWT_SECRET);
       
                   res.send({
                       message: 'Login successful!',
